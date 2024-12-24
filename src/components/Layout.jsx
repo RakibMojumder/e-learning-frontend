@@ -1,7 +1,7 @@
 import React from "react";
 
 const Layout = ({ children }) => {
-  return <div className="max-w-[1200px] mx-auto px-5 border">{children}</div>;
+  return <div className="max-w-[1280px] mx-auto px-5">{children}</div>;
 };
 
 export default Layout;

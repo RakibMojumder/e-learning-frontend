@@ -23,7 +23,7 @@ const Navbar = () => {
   const [showItems, setShowItems] = useState("");
 
   return (
-    <div className="border-b sticky top-0 bg-white">
+    <div className="border-b sticky top-0 z-[9999] bg-white">
       <div
         onMouseLeave={() => setShowItems("")}
         className="flex items-center justify-between gap-x-3 sm:gap-x-6 xl:gap-x-3 max-w-[1440px] mx-auto px-4 md:px-7 py-3"

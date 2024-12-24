@@ -16,7 +16,7 @@ const NavItems = ({ showItems, setShowItems, itemName, items, className }) => {
       </div>
       <div
         className={cn(
-          "absolute top-8 -left-1/2 min-w-max bg-white py-3 px-4 space-y-1.5 square-shadow z-50 text-muted text-[15px] font-medium",
+          "absolute top-8 -left-1/2 min-w-max bg-white py-3 px-4 space-y-1.5 square-shadow z-[999] text-muted text-[15px] font-medium",
           showItems === itemName ? "block" : "hidden",
           className
         )}
