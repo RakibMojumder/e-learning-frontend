@@ -6,7 +6,7 @@ import OfflineCenter from "../hero/OfflineCenter";
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white py-10 bg-[url(https://cdn.10minuteschool.com/images/Background_Noise_1732776287934.png)]">
+    <section className="bg-black text-white py-10 bg-[url(https://cdn.10minuteschool.com/images/Background_Noise_1732776287934.png)]">
       <Layout>
         <div>
           <Image
@@ -17,7 +17,7 @@ const Hero = () => {
             className="mx-auto"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 mt-14">
           {/* school course */}
           <SchoolCourses />
           {/* Spoken english course */}
@@ -26,7 +26,7 @@ const Hero = () => {
         {/* Offline location */}
         <OfflineCenter />
       </Layout>
-    </div>
+    </section>
   );
 };
 
