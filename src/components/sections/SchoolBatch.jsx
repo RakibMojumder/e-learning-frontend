@@ -20,7 +20,7 @@ const SchoolBatch = () => {
           {schoolBatchData.map((course) => (
             <div
               key={course.id}
-              className="my-0 mb-4 flex h-full w-full cursor-pointer flex-row gap-4 rounded-none border-b border-[#E5E7EB] pb-4 transition-colors duration-200 md:max-w-[200px] md:flex-col sm:rounded sm:border sm:pb-0 md:min-w-[272px] md:hover:border-green xs:border-dashed"
+              className="my-0 mb-4 flex h-full w-full cursor-pointer flex-row gap-4 rounded-none border-b border-[#E5E7EB] hover:border-primary pb-4 transition-colors duration-200 md:max-w-[200px] md:flex-col sm:rounded sm:border sm:pb-0 md:min-w-[272px] md:hover:border-green xs:border-dashed"
             >
               <div className="w-auto min-w-[100px] max-w-[144px] rounded sm:max-w-full sm:rounded-b-none">
                 <Image
