@@ -17,6 +17,7 @@ import { RiMenuUnfoldLine } from "react-icons/ri";
 import MobileNavItems from "./MobileNavItems";
 import SearchIcon from "../../../public/assets/icons/SearchIcon";
 import { LuPhone } from "react-icons/lu";
+import Link from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -85,7 +86,9 @@ const Navbar = () => {
           </span>
           <SearchIcon className="sm:hidden" />
           <LuPhone size={20} className="sm:hidden" />
-          <Button>Login</Button>
+          <Link href={"/login"}>
+            <Button>Login</Button>
+          </Link>
         </div>
       </div>
 
