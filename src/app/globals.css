@@ -69,6 +69,25 @@
   }
 
   .square-shadow {
-    @apply shadow-[0px_0px_6px_#ddd];
+    @apply shadow-[0px_0px_4px_#ddd];
+  }
+
+  /* Custom scrollbar styles */
+  .scrollbar::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #686868;
+    border-radius: 6px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 6px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #686868;
   }
 }
