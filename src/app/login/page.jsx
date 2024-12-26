@@ -20,9 +20,9 @@ const LoginPage = () => {
 
   return (
     <Layout>
-      <div className="grid grid-cols-2 items-center py-16">
+      <div className="grid md:grid-cols-2 items-center py-16 min-h-svh">
         <div>
-          <div className="max-w-[372px]">
+          <div className="w-full md:max-w-[372px]">
             {step === steps.EMAIL_CHECKING && (
               <EmailCheckingForm setStep={setStep} />
             )}
@@ -31,7 +31,7 @@ const LoginPage = () => {
             {step === steps.REGISTER && <Register />}
           </div>
         </div>
-        <div>
+        <div className="hidden md:block">
           <p className="text-xl font-bold text-center">
             দৈনিক লাইভ ক্লাসে অংশ নিয়ে বজায় রাখুন রুটিনমাফিক পড়াশোনা
           </p>

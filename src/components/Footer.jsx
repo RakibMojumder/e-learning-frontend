@@ -1,34 +1,41 @@
 import React from "react";
 import Layout from "./Layout";
+import Image from "next/image";
+import Logo from "./navbar/Logo";
+import {
+  FaFacebook,
+  FaInstagramSquare,
+  FaLinkedin,
+  FaYoutubeSquare,
+  FaTiktok,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="pt-20">
       <Layout>
         <div className="flex flex-col pt-12 md:flex-row  md:border-[#E4E4E4] ">
           <div className="flex flex-col items-center w-full mb-7 md:mb-0 md:items-start mx-lg:mb-7 mx-lg:mr-6">
-            <a className="mb-4" href="/">
-              <div className="rounded-md opacity-0 transition-opacity duration-300 ease-in-out">
-                image
-              </div>
-            </a>
-            <h3 className="mb-[14px] text-base font-semibold md:font-medium">
-              ডাউনলোড করুন আমাদের মোবাইল অ্যাপ
+            <Logo />
+            <h3 className="mb-[14px] mt-5 text-base font-semibold md:font-medium">
+              Download Our Mobile App
             </h3>
             <div className="flex">
               <div className="mr-4">
-                <a href="https://play.google.com/store/apps/details?id=com.a10minuteschool.tenminuteschool">
-                  <div className="rounded-md opacity-0 transition-opacity duration-300 ease-in-out">
-                    image
-                  </div>
-                </a>
+                <Image
+                  src="https://cdn.10minuteschool.com/images/google-play-icon_1695731678094.png?w=156&h=49"
+                  alt="google play icon"
+                  height={50}
+                  width={156}
+                />
               </div>
               <div>
-                <a href="https://apps.apple.com/us/app/10-minute-school/id1577061772">
-                  <div className="rounded-md opacity-0 transition-opacity duration-300 ease-in-out">
-                    image
-                  </div>
-                </a>
+                <Image
+                  src="https://cdn.10minuteschool.com/images/ios-store-icon_1695731704002.png?w=156&h=49"
+                  alt="ios store icon"
+                  height={50}
+                  width={156}
+                />
               </div>
             </div>
           </div>
@@ -36,111 +43,49 @@ const Footer = () => {
             <div className="flex justify-center w-full max-w-sm">
               <div className="w-1/2 mr-4">
                 <h3 className="mb-3 text-base font-semibold md:text-xl md:font-bold">
-                  কোম্পানি
+                  Company
                 </h3>
                 <ul className="flex flex-col justify-center mb-4 text-gray-600 md:mb-0 md:justify-start md:gap-4">
-                  <li>
-                    <a
-                      href="https://app.10minuteschool.com/careers"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base"
-                    >
-                      ক্যারিয়ার / নিয়োগ বিজ্ঞপ্তি
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Career / Recruitment
                   </li>
-                  <li>
-                    <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLScWh9jjyWnUKdDKET1-LHvdTxuU6-ssd0GLTI-0JlQ2MH6RzA/viewform"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base"
-                    >
-                      শিক্ষক হিসাবে যোগ দিন
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Join as a Teacher
                   </li>
-                  <li>
-                    <a
-                      href="https://affiliation.10minuteschool.com/"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base"
-                    >
-                      অ্যাফিলিয়েট হিসাবে যোগ দিন
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Join as an Affiliate
                   </li>
-                  <li>
-                    <a
-                      href="https://app.10minuteschool.com/privacy-policy"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base"
-                    >
-                      প্রাইভেসি পলিসি
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Privacy policy
                   </li>
-                  <li>
-                    <a
-                      href="https://app.10minuteschool.com/refund-policy"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base"
-                    >
-                      রিফান্ড পলিসি
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Refund policy
                   </li>
-                  <li>
-                    <a
-                      href="https://app.10minuteschool.com/terms-and-conditions"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base"
-                    >
-                      ব্যবহারকারীর শর্তাবলি
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Terms & Conditions
                   </li>
                 </ul>
               </div>
               <div className="w-1/2">
                 <h3 className="mb-3 text-base font-semibold md:text-xl md:font-bold">
-                  অন্যান্য
+                  Others
                 </h3>
                 <ul className="flex flex-col justify-center mb-4 text-gray-600 md:mb-0 md:justify-start md:gap-4">
-                  <li>
-                    <a
-                      href="https://blog.10minuteschool.com/"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base "
-                    >
-                      ব্লগ
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">Blog</li>
+                  <li className="hover:text-primary cursor-pointer">
+                    Book Store
                   </li>
-                  <li>
-                    <a
-                      href="/store/all"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base "
-                    >
-                      বুক স্টোর
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Free Notes & Guides
                   </li>
-                  <li>
-                    <a
-                      href="https://10minuteschool.com/content"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base "
-                    >
-                      ফ্রি নোটস ও গাইড
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Job Preparation Courses
                   </li>
-                  <li>
-                    <a
-                      href="/jobs-prep"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base "
-                    >
-                      চাকরি প্রস্তুতি কোর্সসমূহ
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Verify Certificate
                   </li>
-                  <li>
-                    <a
-                      href="/certificate"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base "
-                    >
-                      সার্টিফিকেট ভেরিফাই করুন
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/resource"
-                      className="mb-2 text-sm font-medium hover:text-green md:text-base "
-                    >
-                      ফ্রি ডাউনলোড
-                    </a>
+                  <li className="hover:text-primary cursor-pointer">
+                    Free Download
                   </li>
                 </ul>
               </div>
@@ -149,10 +94,10 @@ const Footer = () => {
           <div className="flex flex-col w-full ml-0 md:ml-4">
             <div className="hidden md:block">
               <h3 className="mb-3 text-base font-semibold md:text-xl md:font-bold">
-                আমাদের যোগাযোগ মাধ্যম
+                Keep up with us at
               </h3>
               <p className="mb-4 text-base font-normal">
-                কল করুন{" "}
+                Call:{" "}
                 <span>
                   <a className="text-primary" href="tel:16910">
                     16910
@@ -161,7 +106,7 @@ const Footer = () => {
                 </span>
               </p>
               <p className="mb-4 text-base font-normal">
-                হোয়াটসঅ্যাপ{" "}
+                Whatsapp:{" "}
                 <span>
                   <a
                     className="text-primary"
@@ -173,7 +118,7 @@ const Footer = () => {
                 </span>
               </p>
               <p className="mb-4 text-base font-normal">
-                দেশের বাহির থেকে{" "}
+                Outside Bangladesh:{" "}
                 <span>
                   <a className="text-primary" href="tel:+8809610916910">
                     +880 9610916910
@@ -181,66 +126,16 @@ const Footer = () => {
                 </span>
               </p>
               <p className="mb-2 text-base font-normal">
-                ইমেইল{" "}
+                Email Us:{" "}
                 <span className="text-primary">support@10minuteschool.com</span>
               </p>
             </div>
             <div className="mx-auto mb-3 mt-5 flex w-full max-w-[256px] gap-6 md:mx-0">
-              <div>
-                <a
-                  href="https://www.facebook.com/10minuteschool/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out">
-                    image
-                  </div>
-                </a>
-              </div>
-              <div>
-                <a
-                  href="https://www.instagram.com/10ms_insta/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out">
-                    image
-                  </div>
-                </a>
-              </div>
-              <div>
-                <a
-                  href="https://www.linkedin.com/company/10ms/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out">
-                    image
-                  </div>
-                </a>
-              </div>
-              <div>
-                <a
-                  href="https://www.youtube.com/channel/UCL89KKkLs0tZKld-iIS3NGw"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out">
-                    image
-                  </div>
-                </a>
-              </div>
-              <div>
-                <a
-                  href="https://www.tiktok.com/@10minuteschool?lang=en"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="undefined opacity-0 transition-opacity duration-300 ease-in-out">
-                    image
-                  </div>
-                </a>
-              </div>
+              <FaFacebook size={30} />
+              <FaInstagramSquare size={30} />
+              <FaLinkedin size={30} />
+              <FaYoutubeSquare size={30} />
+              <FaTiktok size={30} />
             </div>
           </div>
         </div>
