@@ -7,33 +7,32 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 
-import admissionCourseData from "../../data/admissionCourseData.json";
 import Layout from "../Layout";
 import { LuChevronRight, LuMoveRight } from "react-icons/lu";
+import jobPrepCourses from "../../data/jobPrepCourseData.json";
 import { Button } from "../ui/button";
 
-const AdmissionCourse = () => {
+const JobPerpCourse = () => {
   return (
-    <section className="pt-28 pb-32 md:px-5 bg-[url('https://cdn.10minuteschool.com/images/background-admission_1678085094236.png')] bg-left-bottom bg-no-repeat">
+    <section className="py-28 md:px-5">
       <Layout>
         <div className="mx-auto px-4 text-center">
           <h2 className="flex items-center justify-center gap-2 pb-3 text-sm font-medium md:pb-6 md:text-lg">
-            <span>ভর্তি পরীক্ষা</span>
+            <span>চাকরি প্রস্তুতি</span>
           </h2>
           <div className=" mx-auto">
             <h2 className="mb-2 text-2xl font-semibold leading-[32px] md:mb-4 md:text-[44px] md:leading-[56px] text-[#111827]">
-              স্বপ্নের ভার্সিটির সম্পূর্ণ প্রস্তুতি{" "}
+              সরকারি চাকরির সর্বোচ্চ প্রস্তুতি
             </h2>
           </div>
           <div className="mb-7 text-sm font-normal leading-[22px] md:mb-4 md:text-lg md:leading-7 md:tracking-normal text-[#4B5563]">
-            ইঞ্জিনিয়ারিং-মেডিকেল কিংবা ভার্সিটি-গুচ্ছ - লক্ষ্য যাই হোক, অর্জনের
-            পথ এখানেই।
+            বিসিএস কিংবা ব্যাংকে চাকরি - টার্গেট যেটাই হোক, সলিউশন এখানেই!
           </div>
         </div>
 
         <Carousel className="w-full mt-7 md:mt-14">
           <CarouselContent className="-ml-1 gap-4">
-            {admissionCourseData.map((course) => (
+            {jobPrepCourses.map((course) => (
               <CarouselItem key={course.id} className="pl-1 max-w-fit">
                 <div className="my-0 flex h-full min-w-[200px] max-w-[200px] cursor-pointer flex-col overflow-hidden rounded transition-colors border hover:border-primary md:min-w-[272px] md:rounded-[6px]">
                   <Image
@@ -65,7 +64,6 @@ const AdmissionCourse = () => {
           <CarouselPrevious className="bg-neutral-500 hover:bg-neutral-500" />
           <CarouselNext className="bg-neutral-500 hover:bg-neutral-500" />
         </Carousel>
-
         <div className="flex justify-center mt-2 md:mt-6 md:pt-12">
           <Button className="h-11">
             সকল কোর্স <LuChevronRight />
@@ -76,4 +74,4 @@ const AdmissionCourse = () => {
   );
 };
 
-export default AdmissionCourse;
+export default JobPerpCourse;
