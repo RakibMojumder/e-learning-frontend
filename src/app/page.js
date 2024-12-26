@@ -4,6 +4,7 @@ import JobPerpCourse from "@/components/sections/JobPerpCourse";
 import OnlineBatch from "@/components/sections/OnlineBatch";
 import SchoolBatch from "@/components/sections/SchoolBatch";
 import SkillsCourse from "@/components/sections/SkillsCourse";
+import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <SkillsCourse />
       <AdmissionCourse />
       <JobPerpCourse />
+      <Testimonials />
     </div>
   );
 }
