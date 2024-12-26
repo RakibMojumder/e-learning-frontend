@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.10ms.com",
       },
+      {
+        protocol: "https",
+        hostname: "s3.ap-southeast-1.amazonaws.com",
+      },
     ],
   },
 };
