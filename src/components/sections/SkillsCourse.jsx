@@ -10,10 +10,11 @@ import Layout from "../Layout";
 import skillCourses from "../../data/skillsCourseData.json";
 import skillCourseCategory from "../../data/skillCourseCategoryData.json";
 import Image from "next/image";
+import { LuMoveRight } from "react-icons/lu";
 
 const SkillsCourse = () => {
   return (
-    <section className="bg-black py-28 px-5">
+    <section className="bg-black py-28 md:px-5">
       <Layout>
         <div className="mx-auto px-4 text-center max-w-[744px] text-white">
           <h2 className="flex items-center justify-center gap-2 pb-3 text-sm font-medium md:pb-6 md:text-lg">
@@ -85,8 +86,9 @@ const SkillsCourse = () => {
                         </h3>
                       </div>
                       <div>
-                        <p className="mt-2 flex gap-1 text-sm text-[#1DAB55]">
+                        <p className="mt-2 flex items-center gap-1 text-sm text-[#1DAB55]">
                           <span>বিস্তারিত</span>
+                          <LuMoveRight />
                         </p>
                       </div>
                     </div>

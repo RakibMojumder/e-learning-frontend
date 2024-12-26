@@ -6,8 +6,15 @@ import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import ButtonSpinner from "../ButtonSpinner";
 import { useState } from "react";
+import axios from "axios";
+import { toast } from "@/hooks/use-toast";
+import { useAuthContext } from "@/provider/AuthProvider";
+import { useRouter } from "next/navigation";
 
-const Register = ({ userEmail }) => {
+const Register = () => {
+  const { userEmail, setToken } = useAuthContext();
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -20,10 +27,34 @@ const Register = ({ userEmail }) => {
       confirmPassword: "",
     },
   });
-  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
-    console.log(data);
+    setIsLoading(true);
+
+    try {
+      const { data: response } = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/user/create-user`,
+        data
+      );
+
+      if (response.success) {
+        toast({
+          title: "Congratulation.",
+          description: response?.message,
+        });
+        localStorage.setItem("token", response.data.token);
+        setToken(response.data.token);
+        router.push("/");
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: error?.response?.data?.message,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -85,7 +116,8 @@ const Register = ({ userEmail }) => {
               {...register("confirmPassword", {
                 required: "Confirm password is required",
                 validate: (value) =>
-                  value === password || "Passwords do not match",
+                  value === password.value ||
+                  "Confirm password should match with password",
               })}
             />
             {errors.confirmPassword && (
@@ -98,6 +130,7 @@ const Register = ({ userEmail }) => {
 
         <Button
           type="submit"
+          disabled={isLoading}
           className={`h-11 w-full ${
             isLoading ? "bg-primary/60" : "bg-primary"
           }`}

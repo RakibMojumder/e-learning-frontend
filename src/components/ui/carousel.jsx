@@ -169,7 +169,7 @@ const CarouselPrevious = React.forwardRef(
       <Button
         ref={ref}
         className={cn(
-          "absolute size-8 p-2 rounded-full bg-white/40 hover:bg-white/40 z-20",
+          "absolute size-8 p-2 rounded-full bg-white/60 hover:bg-white/40 z-20",
           orientation === "horizontal"
             ? "-left-4 top-1/2 -translate-y-1/2"
             : "-top-12 left-1/2 -translate-x-1/2 rotate-90",

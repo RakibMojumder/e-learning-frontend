@@ -2,6 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Advertise from "@/components/sections/Advertise";
+import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
+import AuthProvider from "@/provider/AuthProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,9 +23,13 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${inter.className} antialiased`}
       >
-        <Navbar />
-        <Advertise />
-        {children}
+        <AuthProvider>
+          <Navbar />
+          <Advertise />
+          {children}
+          <Footer />
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

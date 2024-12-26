@@ -38,7 +38,7 @@ const SchoolBatch = () => {
                 </div>
                 <div className="flex items-center">
                   <p className="text-sm font-[600] text-[#1DAB55] md:text-lg">
-                    {course.price}
+                    ৳ {course.price}
                   </p>
                 </div>
               </div>

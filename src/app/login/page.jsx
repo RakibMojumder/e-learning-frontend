@@ -16,8 +16,7 @@ export const steps = {
 };
 
 const LoginPage = () => {
-  const [userEmail, setUserEmail] = useState("");
-  const [step, setStep] = useState("register");
+  const [step, setStep] = useState(steps.EMAIL_CHECKING);
 
   return (
     <Layout>
@@ -25,17 +24,11 @@ const LoginPage = () => {
         <div>
           <div className="max-w-[372px]">
             {step === steps.EMAIL_CHECKING && (
-              <EmailCheckingForm
-                userEmail={userEmail}
-                setUserEmail={setUserEmail}
-                setStep={setStep}
-              />
+              <EmailCheckingForm setStep={setStep} />
             )}
-            {step === steps.OTP && (
-              <Otp userEmail={userEmail} setStep={setStep} />
-            )}
-            {step === steps.LOGIN && <Login userEmail={userEmail} />}
-            {step === steps.REGISTER && <Register userEmail={userEmail} />}
+            {step === steps.OTP && <Otp setStep={setStep} />}
+            {step === steps.LOGIN && <Login />}
+            {step === steps.REGISTER && <Register />}
           </div>
         </div>
         <div>

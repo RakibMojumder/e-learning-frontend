@@ -9,9 +9,13 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 import ButtonSpinner from "../ButtonSpinner";
 import axios from "axios";
+import { steps } from "@/app/login/page";
+import { toast } from "@/hooks/use-toast";
+import { useAuthContext } from "@/provider/AuthProvider";
 
-const Otp = ({ userEmail, setStep }) => {
+const Otp = ({ setStep }) => {
   const [otpValue, setOtpValue] = useState("");
+  const { userEmail } = useAuthContext();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {
@@ -23,9 +27,15 @@ const Otp = ({ userEmail, setStep }) => {
         { email: userEmail, otp: otpValue }
       );
 
-      console.log(response);
+      if (response.success) {
+        setStep(steps.REGISTER);
+      }
     } catch (error) {
-      console.log(error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: error?.response?.data?.message,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -51,7 +61,7 @@ const Otp = ({ userEmail, setStep }) => {
 
       <Button
         onClick={handleSubmit}
-        disabled={otpValue.length < 4}
+        disabled={otpValue.length < 4 || isLoading}
         className="h-11 w-full mt-8 disabled:bg-gray-800 disabled:cursor-not-allowed"
       >
         {isLoading ? <ButtonSpinner /> : "সাবমিট করুন"}

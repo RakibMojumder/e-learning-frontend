@@ -6,14 +6,17 @@ import axios from "axios";
 import { useState } from "react";
 import ButtonSpinner from "../ButtonSpinner";
 import { steps } from "@/app/login/page";
+import { toast } from "@/hooks/use-toast";
+import { useAuthContext } from "@/provider/AuthProvider";
 
-const EmailCheckingForm = ({ setUserEmail, setStep }) => {
+const EmailCheckingForm = ({ setStep }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues: { email: "" } });
   const [isLoading, setIsLoading] = useState(false);
+  const { setUserEmail } = useAuthContext();
 
   const onSubmit = async (data) => {
     setIsLoading(true);
@@ -27,7 +30,11 @@ const EmailCheckingForm = ({ setUserEmail, setStep }) => {
       setUserEmail(response?.data?.email);
       setStep(response?.data?.isUser ? steps.LOGIN : steps.OTP);
     } catch (error) {
-      console.error("Error checking user existence:", error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: error?.response?.data?.message,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -57,6 +64,7 @@ const EmailCheckingForm = ({ setUserEmail, setStep }) => {
 
       <Button
         type="submit"
+        disabled={isLoading}
         className={`h-11 w-full ${isLoading ? "bg-primary/60" : "bg-primary"}`}
       >
         {isLoading ? <ButtonSpinner /> : "সাবমিট করুন"}

@@ -5,7 +5,7 @@ import { LuChevronRight } from "react-icons/lu";
 
 const OnlineBatch = () => {
   return (
-    <section className="py-20 px-5 max-w-[1200px] mx-auto">
+    <section className="py-20 md:px-5 max-w-[1200px] mx-auto">
       <div className="mx-auto px-4 text-center max-w-[744px] md:mb-20">
         <h2 className="flex items-center justify-center gap-2 text-[#F0766A] pb-3 text-sm font-medium md:pb-6 md:text-lg">
           <span>ক্লাস ৬-১০</span>

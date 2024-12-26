@@ -5,27 +5,44 @@ import { Label } from "../ui/label";
 import axios from "axios";
 import { useState } from "react";
 import ButtonSpinner from "../ButtonSpinner";
+import { toast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
+import { useAuthContext } from "@/provider/AuthProvider";
 
-const Login = ({ userEmail }) => {
+const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues: { password: "" } });
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const { userEmail, setToken } = useAuthContext();
 
   const onSubmit = async (data) => {
     setIsLoading(true);
 
     try {
       const { data: response } = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/user/user-exists`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/user/login-user`,
         { email: userEmail, password: data.password }
       );
 
-      console.log(response);
+      if (response.success) {
+        toast({
+          title: "Congratulation.",
+          description: response?.message,
+        });
+        localStorage.setItem("token", response.data.token);
+        setToken(response.data.token);
+        router.push("/");
+      }
     } catch (error) {
-      console.error("Error checking user existence:", error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: error?.response?.data?.message,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -55,6 +72,7 @@ const Login = ({ userEmail }) => {
 
       <Button
         type="submit"
+        disabled={isLoading}
         className={`h-11 w-full ${isLoading ? "bg-primary/60" : "bg-primary"}`}
       >
         {isLoading ? <ButtonSpinner /> : "সাবমিট করুন"}

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import logo from "../../../public/logo.svg";
+import Link from "next/link";
 
 const Logo = () => {
   return (
-    <div>
+    <Link href={"/"}>
       <Image src={logo} alt="logo" className="w-24" />
-    </div>
+    </Link>
   );
 };
 

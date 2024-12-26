@@ -11,13 +11,12 @@ import Logo from "./Logo";
 import Searchbar from "./Searchbar";
 import { BsTelephoneFill } from "react-icons/bs";
 import NavItems from "./NavItems";
-import { Button } from "../ui/button";
 import EnLanguageIcon from "../../../public/assets/icons/EnLanguageIcon";
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import MobileNavItems from "./MobileNavItems";
 import SearchIcon from "../../../public/assets/icons/SearchIcon";
 import { LuPhone } from "react-icons/lu";
-import Link from "next/link";
+import AuthButton from "./AuthButton";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -86,9 +85,7 @@ const Navbar = () => {
           </span>
           <SearchIcon className="sm:hidden" />
           <LuPhone size={20} className="sm:hidden" />
-          <Link href={"/login"}>
-            <Button>Login</Button>
-          </Link>
+          <AuthButton />
         </div>
       </div>
 
