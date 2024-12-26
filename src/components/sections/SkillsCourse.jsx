@@ -119,7 +119,7 @@ const SkillsCourse = () => {
             দেশের সেরা প্রতিষ্ঠানগুলো নিচ্ছে আমাদের কর্পোরেট স্কিলস ডেভেলপমেন্ট
             প্রোগ্রাম
           </p>
-          <div className="mb-4 overflow-x-auto scrollbar">
+          <div className="mb-4 overflow-x-auto scrollbar pb-3">
             <div className="flex min-w-[800px] flex-nowrap justify-between opacity-30">
               <Unilever />
               <Samsung />

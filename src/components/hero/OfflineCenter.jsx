@@ -19,7 +19,7 @@ const OfflineCenter = () => {
         অনলাইনে ৫ লক্ষাধিক শিক্ষার্থীকে ইংরেজি শিখিয়ে আমরা এখন অফলাইনে
       </h3>
 
-      <ul className="flex flex-nowrap items-center gap-2 md:justify-center mb-6 overflow-x-hidden">
+      <ul className="flex flex-nowrap items-center gap-2 md:justify-center mb-6 overflow-x-auto scrollbar pb-2">
         <div className="px-4 py-2 rounded-lg bg-white/5 flex items-center gap-2 text-sm snap-center">
           <span className="bg-white/5 p-2 rounded-full inline-block">
             <HiOutlineLocationMarker />
